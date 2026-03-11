@@ -12,6 +12,7 @@
             --light: #f8f9fa;
             --dark: #212529;
             --whatsapp: #25d366;
+            --text-gray: #555;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
@@ -29,7 +30,7 @@
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -43,11 +44,6 @@
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .whatsapp-float:hover {
-            background-color: #20ba5a;
-            transform: scale(1.15);
         }
 
         /* Navegação Fixa */
@@ -70,7 +66,7 @@
         nav ul li a { color: white; text-decoration: none; font-weight: bold; font-size: 1rem; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
 
-        /* Seções Full Screen */
+        /* Configuração de Tela Cheia */
         section {
             min-height: 100vh;
             display: flex;
@@ -80,120 +76,130 @@
             padding: 90px 8% 40px 8%;
         }
 
-        .section-title { font-size: 2.2rem; margin-bottom: 2.5rem; color: var(--primary); text-align: center; text-transform: uppercase; }
+        .section-title { font-size: 2.2rem; margin-bottom: 2.5rem; color: var(--primary); text-align: center; text-transform: uppercase; letter-spacing: 1px; }
 
         /* ABA 1: INÍCIO */
         #inicio {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1350&q=80');
             background-size: cover; background-position: center; color: white; text-align: center;
         }
+        #inicio h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin-bottom: 1.2rem; line-height: 1.1; }
+        #inicio p { font-size: 1.2rem; max-width: 750px; margin-bottom: 2.5rem; color: #ddd; }
 
         /* ABA 2: NOTÍCIAS */
         #noticias { background: white; }
         .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
-        .news-card { border-bottom: 5px solid var(--secondary); background: var(--light); padding: 30px; border-radius: 12px; }
+        .news-card { border-bottom: 5px solid var(--secondary); background: var(--light); padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
         /* ABA 3: IMAGENS */
         #imagens { background: #f0f2f5; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; width: 100%; max-width: 1100px; }
         .gallery-grid img { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; transition: 0.4s; }
+        .gallery-grid img:hover { transform: scale(1.02); filter: brightness(1.1); }
 
         /* ABA 4: DEPOIMENTOS */
         #depoimentos { background: var(--primary); color: white; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; }
         .testimonial-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; font-style: italic; border: 1px solid rgba(255,255,255,0.2); }
+        .testimonial-card b { display: block; margin-top: 15px; color: var(--secondary); font-style: normal; }
 
         /* ABA 5: CONTATO / LOGIN */
         #contato { background: white; }
-        .split-container { display: flex; flex-wrap: wrap; gap: 30px; width: 100%; max-width: 1100px; }
+        .split-container { display: flex; flex-wrap: wrap; gap: 30px; width: 100%; max-width: 1150px; }
         .box { flex: 1; min-width: 320px; padding: 35px; border-radius: 20px; }
-        .box-contact { background: var(--light); border: 1px solid #eee; }
+        .box-contact { background: var(--light); border: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .box-login { background: #001f3f; color: white; display: flex; flex-direction: column; justify-content: center; }
         
-        input, textarea { width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+        input, textarea, select { width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+        select { background-color: white; cursor: pointer; }
         
         .btn {
             background: var(--secondary); color: white; padding: 16px; text-decoration: none; 
-            border-radius: 8px; font-weight: bold; border: none; cursor: pointer; display: inline-block; width: 100%; text-align: center;
+            border-radius: 8px; font-weight: bold; border: none; cursor: pointer; display: inline-block; width: 100%; text-align: center; font-size: 1rem; transition: 0.3s;
         }
+        .btn:hover { background: #e65c00; transform: translateY(-2px); }
 
-        .map-box { width: 100%; max-width: 1100px; height: 250px; margin-top: 30px; border-radius: 20px; overflow: hidden; }
+        .map-box { width: 100%; max-width: 1150px; height: 300px; margin-top: 30px; border-radius: 20px; overflow: hidden; border: 2px solid var(--light); }
+
+        footer { background: #111; color: #777; width: 100%; text-align: center; padding: 25px; font-size: 0.85rem; }
 
         @media (max-width: 768px) {
             header { height: auto; padding: 15px; flex-direction: column; }
-            section { padding: 120px 5% 40px 5%; }
-            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
+            nav ul { margin-top: 10px; }
+            section { padding: 130px 5% 40px 5%; }
+            .split-container { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5511992916204?text=Olá! Vim pelo site e gostaria de saber sobre as aulas na Zona Sul." 
+    <a href="https://wa.me/5511992916204?text=Olá! Gostaria de informações sobre as aulas de direção na Zona Sul." 
        class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header>
-        <div style="font-size: 1.3rem; font-weight: 900;">INSTRUTOR <span style="color: var(--secondary);">ZONA SUL SP</span></div>
+        <div style="font-size: 1.3rem; font-weight: 900;">INSTRUTOR <span style="color: var(--secondary);">ZONA SUL</span></div>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#noticias">Notícias</a></li>
                 <li><a href="#imagens">Imagens</a></li>
-                <li><a href="#depoimentos">Alunos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="inicio">
-        <h1>Vença o Medo de Dirigir</h1>
-        <p>Aulas personalizadas na Zona Sul de SP. Treinamento para habilitados e preparação completa para o exame prático.</p>
-        <div style="width: 300px;"><a href="#contato" class="btn">AGENDAR AGORA</a></div>
+        <h1>Liberdade para dirigir na Zona Sul</h1>
+        <p>Especialista em preparação para exames e treinamento para habilitados com medo de dirigir. Atendimento personalizado em domicílio.</p>
+        <div style="width: 280px;">
+            <a href="#contato" class="btn">QUERO COMEÇAR</a>
+        </div>
     </section>
 
     <section id="noticias">
-        <h2 class="section-title">Dicas e Informativos</h2>
+        <h2 class="section-title">Informativos</h2>
         <div class="news-grid">
             <div class="news-card">
-                <h3>Como passar no Detran</h3>
-                <p>Os 5 erros que mais reprovam em Santo Amaro e Interlagos.</p>
+                <h3>Aprovação em Interlagos</h3>
+                <p>Confira as principais dicas para o percurso de prova da nossa região.</p>
             </div>
             <div class="news-card">
-                <h3>Medo de Rodovia?</h3>
-                <p>Passo a passo para ganhar confiança em avenidas movimentadas como a Marginal Pinheiros.</p>
+                <h3>Medo de Trânsito?</h3>
+                <p>Entenda como a psicologia aplicada à direção ajuda a superar traumas reais.</p>
             </div>
             <div class="news-card">
-                <h3>Simulado Prático</h3>
-                <p>Realizamos simulados idênticos ao dia do exame oficial.</p>
+                <h3>Novas Regras 2026</h3>
+                <p>Tudo o que você precisa saber sobre as atualizações da CNH este ano.</p>
             </div>
         </div>
     </section>
 
     <section id="imagens">
-        <h2 class="section-title">Nossa Galeria</h2>
+        <h2 class="section-title">Galeria de Treinos</h2>
         <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" alt="Aula">
-            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=500&q=80" alt="Painel">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=500&q=80" alt="Direção">
-            <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=500&q=80" alt="Cidade">
+            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Aula de Direção">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Treinamento Habilitados">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80" alt="Carro Escola">
+            <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=600&q=80" alt="Trânsito SP">
         </div>
     </section>
 
     <section id="depoimentos">
-        <h2 class="section-title" style="color: white;">Quem treinou, aprovou</h2>
+        <h2 class="section-title" style="color: white;">Alunos que superaram o medo</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                "Não pegava no carro há anos. Fiz o treinamento e perdi totalmente o medo. Hoje levo meus filhos na escola tranquilamente."
-                <b>— Renata M., Interlagos</b>
+                "O instrutor me deu a confiança que faltava. Hoje dirijo para todo lugar na Zona Sul!"
+                <b>— Mariana S., Santo Amaro</b>
             </div>
             <div class="testimonial-card">
-                "O instrutor é super calmo. Passei de primeira no exame depois de treinar exatamente o que cai na prova."
-                <b>— Carlos H., Socorro</b>
+                "Passei de primeira no exame do Detran após as aulas de reforço. Excelente didática!"
+                <b>— Ricardo L., Grajaú</b>
             </div>
             <div class="testimonial-card">
-                "Atendimento excelente e pontual. Vale cada centavo pela segurança que ganhei no trânsito de SP."
-                <b>— Aline S., Grajaú</b>
+                "Atendimento nota 10. Muito paciente com quem está começando do zero."
+                <b>— Carla F., Interlagos</b>
             </div>
         </div>
     </section>
@@ -202,31 +208,44 @@
         <div class="split-container">
             <div class="box box-contact">
                 <h3 style="color: var(--primary); margin-bottom: 15px;">Fale Conosco</h3>
-                <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-                    <textarea name="mensagem" placeholder="Deseja aulas para habilitados ou preparatório?" rows="2" required></textarea>
-                    <button type="submit" class="btn">ENVIAR FORMULÁRIO</button>
+                <form action="https://formsubmit.lcollato@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Novo Lead: Site Instrutor ZS">
+                    
+                    <input type="text" name="nome" placeholder="Seu Nome Completo" required>
+                    <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                    <input type="tel" name="telefone" placeholder="Telefone / WhatsApp" required>
+                    
+                    <select name="servico_desejado" required>
+                        <option value="" disabled selected>O que você precisa?</option>
+                        <option value="Primeira Habilitação">Primeira Habilitação (Preparatório)</option>
+                        <option value="Habilitado">Já sou Habilitado (Medo de dirigir)</option>
+                    </select>
+
+                    <textarea name="mensagem" placeholder="Sua mensagem ou dúvida..." rows="2" required></textarea>
+                    
+                    <button type="submit" class="btn">ENVIAR AGORA</button>
                 </form>
             </div>
 
             <div class="box box-login">
                 <h3 style="text-align: center; margin-bottom: 20px;">Portal do Aluno</h3>
                 <form>
-                    <input type="text" placeholder="CPF ou E-mail">
-                    <input type="password" placeholder="Senha">
-                    <button type="button" class="btn" style="background: white; color: var(--primary);">ACESSAR MINHAS AULAS</button>
+                    <input type="text" placeholder="CPF do Aluno" style="background: rgba(255,255,255,0.9);">
+                    <input type="password" placeholder="Sua Senha" style="background: rgba(255,255,255,0.9);">
+                    <button type="button" class="btn" style="background: white; color: var(--primary);">ENTRAR NO PAINEL</button>
                 </form>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">Esqueceu sua senha?</p>
             </div>
         </div>
 
         <div class="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58455.57945037136!2d-46.7327339!3d-23.6934251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50367373f915%3A0xc6ed45c61f22c4f8!2sSanto%20Amaro%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58485.421523455794!2d-46.74567482813639!3d-23.633458514123537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50f36f6d0a79%3A0xc68798cf06927d3!2sSanto%20Amaro%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <footer style="background: #111; color: #777; width: 100%; text-align: center; padding: 25px;">
-        <p>© 2026 Instrutor Zona Sul SP | Especialista em Psicotransito.</p>
+    <footer>
+        <p>© 2026 Instrutor Zona Sul SP | Atendimento em Santo Amaro, Interlagos, Socorro e região.</p>
     </footer>
 
 </body>
