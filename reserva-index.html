@@ -19,32 +19,14 @@
             --gray-bg: #f4f7f6;
         }
 
-       /* --- PRELOADER CORRIGIDO PARA MOBILE --- */
+       /* --- PRELOADER --- */
         #preloader {
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh;
-            background-color: var(--primary); 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
-            padding: 20px;
-            z-index: 9999;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--primary); display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 9999;
             transition: opacity 0.8s ease, visibility 0.8s;
         }
-        .loader-logo { 
-            color: white; 
-            font-size: 1.8rem; 
-            font-weight: 900; 
-            margin-bottom: 20px; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            line-height: 1.2;
-        }
+        .loader-logo { color: white; font-size: 2rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .loader-logo span { color: var(--secondary); }
         .loader-circle { width: 45px; height: 45px; border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -68,7 +50,7 @@
             color: white; padding: 0 8%; display: flex; justify-content: space-between; align-items: center; 
             position: fixed; top: 0; width: 100%; z-index: 1000; height: 75px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
-        .logo { font-size: 1.2rem; font-weight: 900; text-transform: uppercase; }
+        .logo { font-size: 1.4rem; font-weight: 900; text-transform: uppercase; }
         .logo span { color: var(--secondary); }
         nav ul { display: flex; list-style: none; gap: 20px; }
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; position: relative; }
@@ -89,7 +71,7 @@
 
         /* --- SEÇÕES --- */
         section { padding: 110px 8% 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .section-title { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; text-align: center; }
+        .section-title { font-size: 2.4rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; text-align: center; }
 
         #inicio {
             background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200');
@@ -116,14 +98,11 @@
 
         footer { background: var(--primary); color: white; padding: 35px; text-align: center; font-size: 0.85rem; }
 
-        /* AJUSTES MOBILE EXTRAS */
         @media (max-width: 900px) { 
             .contact-wrapper { grid-template-columns: 1fr; } 
             nav ul { display: none; } 
             .row-form { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.8rem; }
-            .logo { font-size: 1rem; }
-            #inicio h1 { font-size: 2.2rem !important; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -146,7 +125,7 @@
     </a>
 
     <header>
-        <div class="logo">INSTRUTOR <span> ZONA SUL SP </span></div>
+        <div class="logo">INSTRUTOR  <span> ZONA SUL SP </span></div>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
@@ -160,7 +139,7 @@
 
     <section id="inicio">
         <h1 style="font-size: 3.5rem; margin-bottom: 15px;" data-aos="zoom-in">Liberdade no Volante</h1>
-        <p style="font-size: 1.2rem; font-weight: 300; max-width: 800px;" data-aos="fade-up" data-aos-delay="200">Treinamento de direção veicular especializado para Primeira habilitação e Habilitados com medo de dirigir localizado na zona sul da cidade de São Paulo</p>
+        <p style="font-size: 1.3rem; font-weight: 300;" data-aos="fade-up" data-aos-delay="200">Treinamento de direção veícular especializado para Primeira habilitação e Habilitados com medo de dirigir localizado na zona sul da cidade de São Paulo</p>
     </section>
 
     <section id="noticias">
@@ -168,13 +147,15 @@
         <div class="grid">
             <div class="card" data-aos="fade-up">
                 <h3>Detran-SP altera normas para exame prático de habilitação e exclui teste de baliza</h3>
-                <p>O Departamento Estadual de Trânsito de São Paulo (Detran-SP) iniciou a aplicação de novas diretrizes para o exame prático da CNH. A principal alteração é a retirada do teste de baliza em área demarcada conforme a Resolução 1.020 do Contran.<br><br>
-                <strong>Fonte: Terra</strong></p>
+                <p>O Departamento Estadual de Trânsito de São Paulo (Detran-SP) iniciou, nesta segunda-feira (26), a aplicação de novas diretrizes para o exame prático da Carteira Nacional de Habilitação (CNH). A principal alteração é a retirada do teste de baliza em área demarcada. A medida segue a Resolução 1.020 do Conselho Nacional de Trânsito (Contran), publicada em dezembro de 2025, e também é adotada pelos estados do Amazonas, Espírito Santo e Mato Grosso do Sul.<br><br>
+                Fonte: Terra
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Detran-SP libera veículos automáticos e segunda tentativa sem taxa!</h3>
-                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos. Outra novidade é a permissão para refazer o exame prático no mesmo dia sem cobrança adicional.<br><br>
-                <strong>Fonte: Exame</strong></p>
+                <p>A flexibilização também autoriza o uso de carros com câmbio automático, antes restritos a candidatos com necessidades específicas. A medida vale para todos os 500 pontos de prova no estado. Segundo o o Detran-SP, a mudança acompanha a “crescente presença” de veículos automáticos na frota brasileira.
+                Outra novidade é a permissão para refazer o exame prático no mesmo dia, caso haja disponibilidade operacional. A segunda tentativa não gera cobrança adicional e será registrada no Renach, o Registro Nacional de Condutores Habilitados.<br><br>
+                fonte: exame</p>
+                
             </div>
         </div>
     </section>
@@ -184,23 +165,22 @@
         
         <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
             
-            <div class="card" data-aos="flip-left" style="padding: 15px; flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px;">
-                <div style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #eee;">
-                    <img src="imagens/fit.jpg" alt="Honda Fit" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            <div class="card" data-aos="flip-left" style="padding: 15px; flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                <div style="width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #eee;">
+                    <img src="imagens/fit.jpg" alt="Honda Fit" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
                 </div>
-                <p style="text-align: center; margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 0.9rem;">Honda Fit 2016 - Câmbio Automático, direção elétrica e comando duplo - Total conforto e segurança</p>
+                <p style="text-align: center; margin-top: 15px; font-weight: 800; min-height: 40px; color: var(--primary);">Honda Fit 2016 - Câmbio Automático, direção elétrica, ar-condicionado e comando duplo com pedal do lado do instrutor - Total conforto e segurança</p>
             </div>
 
-            <div class="card" data-aos="flip-right" style="padding: 15px; flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px;">
-                <div style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #eee;">
-                    <img src="imagens/leopoldo.jpg" alt="Instrutor" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            <div class="card" data-aos="flip-right" style="padding: 15px; flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                <div style="width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #eee;">
+                    <img src="imagens/leopoldo.jpg" alt="Instrutor" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
                 </div>
-                <p style="text-align: center; margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 0.9rem;">Instrutor e examinador credenciado pelo Detran/SP desde 2000</p>
+                <p style="text-align: center; margin-top: 15px; font-weight: 800; min-height: 40px; color: var(--primary);">Instrutor e examinador credenciado pelo Detran/SP desde 2000</p>
             </div>
 
         </div>
     </section>
-
     <section id="depoimentos">
         <h2 class="section-title" data-aos="zoom-in">O que dizem nossos alunos</h2>
         <div class="grid">
@@ -249,7 +229,7 @@
                         <select name="status" required>
                             <option value="" disabled selected>Selecione uma opção</option>
                             <option value="Habilitado">Já sou Habilitado (medo de dirigir)</option>
-                            <option value="Primeira Habilitação">Primeira Habilitação (Preparo para exame)</option>
+                            <option value="Primeira Habilitação">Primeira Habilitação (Preparo para exame de direção)</option>
                         </select>
                     </div>
 
@@ -265,13 +245,15 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Instrutor Zona Sul SP - Treinamento veicular especializado • São Paulo/SP</p>
+        <p>&copy; 2026 Instrutor Zona Sul SP - Treinamento veícular especializado para condutores • São Paulo/SP</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Iniciar Animações
         AOS.init({ duration: 1000, once: true });
 
+        // Remover Preloader
         window.addEventListener("load", function() {
             const preloader = document.getElementById("preloader");
             setTimeout(() => {
