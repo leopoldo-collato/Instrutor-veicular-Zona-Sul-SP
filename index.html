@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instrutor Zona Sul SP | Treinamento para Habilitados com Medo</title>
-    <meta name="description" content="Perca o medo de dirigir com o Instrutor Zona Sul SP. Treinamento especializado para habilitados e primeira habilitação em Interlagos e região. Agende sua aula!">
-    <meta name="keywords" content="instrutor de direção zona sul sp, medo de dirigir sp, treinamento para habilitados interlagos, aulas de direção para habilitados, autoescola zona sul sp">
-    <meta name="geo.region" content="BR-SP" />
-    <meta name="geo.placename" content="São Paulo" />
     
+    <title>Instrutor Zona Sul SP | Treinamento para Habilitados e Medo de Dirigir</title>
+    <meta name="description" content="Perca o medo de dirigir na Zona Sul de SP. Treinamento especializado para habilitados e primeira habilitação com instrutor credenciado em Interlagos e região.">
+    <meta name="keywords" content="instrutor de direção zona sul sp, treinamento para habilitados sp, medo de dirigir zona sul, aulas de direção interlagos, instrutor particular de direção">
+    <meta name="author" content="Instrutor Zona Sul SP">
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.placename" content="São Paulo - Zona Sul">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
@@ -18,37 +20,18 @@
             --primary: #0a192f;
             --secondary: #f37021;
             --success: #25d366;
-            --danger: #e74c3c;
             --white: #ffffff;
             --gray-bg: #f4f7f6;
         }
 
-       /* --- PRELOADER CORRIGIDO PARA MOBILE --- */
+        /* --- PRELOADER CORRIGIDO MOBILE --- */
         #preloader {
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh;
-            background-color: var(--primary); 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
-            padding: 20px;
-            z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: var(--primary); display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 20px; z-index: 9999; transition: opacity 0.8s ease, visibility 0.8s;
         }
-        .loader-logo { 
-            color: white; 
-            font-size: 1.8rem; 
-            font-weight: 900; 
-            margin-bottom: 20px; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            line-height: 1.2;
-        }
+        .loader-logo { color: white; font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .loader-logo span { color: var(--secondary); }
         .loader-circle { width: 45px; height: 45px; border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -59,7 +42,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--white); color: var(--primary); overflow-x: hidden; }
 
-        /* --- FUNDO DE PLACAS --- */
         .bg-road-signs {
             background-image: url('https://www.transparenttextures.com/patterns/road-signs.png');
             background-repeat: repeat; filter: sepia(1) saturate(5) hue-rotate(340deg) opacity(0.06);
@@ -80,12 +62,11 @@
         nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--secondary); transition: 0.3s; }
         nav ul li a:hover::after { width: 100%; }
 
-        /* --- BOTÕES FLUTUANTES --- */
+        /* --- FLUTUANTES --- */
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
         .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .float-face { background: #1877F2; }
-        .social-sticky a:hover { width: 60px; filter: brightness(1.2); padding-left: 10px; }
 
         .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none; }
         .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; }
@@ -104,7 +85,7 @@
         .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 5px solid var(--secondary); transition: 0.3s; }
         .card:hover { transform: translateY(-8px); }
 
-        /* --- CONTATO OTIMIZADO --- */
+        /* --- CONTATO DIVIDIDO --- */
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 35px; width: 100%; max-width: 1050px; align-items: start; }
         .contact-info { background: white; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 10px solid var(--secondary); }
         .contact-info p { margin-bottom: 15px; font-weight: 600; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; }
@@ -120,13 +101,10 @@
 
         footer { background: var(--primary); color: white; padding: 35px; text-align: center; font-size: 0.85rem; }
 
-        /* AJUSTES MOBILE EXTRAS */
         @media (max-width: 900px) { 
             .contact-wrapper { grid-template-columns: 1fr; } 
             nav ul { display: none; } 
             .row-form { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.8rem; }
-            .logo { font-size: 1rem; }
             #inicio h1 { font-size: 2.2rem !important; }
         }
     </style>
@@ -164,56 +142,89 @@
 
     <section id="inicio">
         <h1 style="font-size: 3.5rem; margin-bottom: 15px;" data-aos="zoom-in">Liberdade no Volante</h1>
-        <p style="font-size: 1.2rem; font-weight: 300; max-width: 800px;" data-aos="fade-up" data-aos-delay="200">Treinamento de direção veicular especializado para Primeira habilitação e Habilitados com medo de dirigir localizado na zona sul da cidade de São Paulo</p>
+        <p style="font-size: 1.2rem; font-weight: 300; max-width: 800px;" data-aos="fade-up">Treinamento de direção veicular especializado para Primeira habilitação e Habilitados com medo de dirigir localizado na zona sul de São Paulo.</p>
     </section>
 
     <section id="noticias">
         <h2 class="section-title" data-aos="fade-right">Notícias</h2>
         <div class="grid">
             <div class="card" data-aos="fade-up">
-                <h3>Detran-SP altera normas para exame prático de habilitação e exclui teste de baliza</h3>
-                <p>O Departamento Estadual de Trânsito de São Paulo (Detran-SP) iniciou a aplicação de novas diretrizes para o exame prático da CNH. A principal alteração é a retirada do teste de baliza em área demarcada conforme a Resolução 1.020 do Contran.<br><br>
-                <strong>Fonte: Terra</strong></p>
+                <h3>Detran-SP altera normas para exame prático</h3>
+                <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, incluindo a retirada do teste de baliza em área demarcada conforme a Resolução 1.020 do Contran.<br><br><strong>Fonte: Terra</strong></p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Detran-SP libera veículos automáticos e segunda tentativa sem taxa!</h3>
-                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos. Outra novidade é a permissão para refazer o exame prático no mesmo dia sem cobrança adicional.<br><br>
-                <strong>Fonte: Exame</strong></p>
+                <h3>Veículos Automáticos Liberados</h3>
+                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos. Segunda tentativa no mesmo dia agora é possível sem taxa extra.<br><br><strong>Fonte: Exame</strong></p>
             </div>
         </div>
     </section>
 
-    <section id="imagens" style="background: rgba(255,255,255,0.4);">
+    <section id="imagens">
         <h2 class="section-title" data-aos="fade-left">Nossa Estrutura</h2>
-        
-        <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
-            
-            <div class="card" data-aos="flip-left" style="padding: 15px; flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px;">
-                <div style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #eee;">
-                    <img src="imagens/fit.jpg" alt="Honda Fit" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-                </div>
-                <p style="text-align: center; margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 0.9rem;">Honda Fit 2016 - Câmbio Automático, direção elétrica e comando duplo - Total conforto e segurança</p>
+        <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            <div class="card" data-aos="flip-left" style="max-width: 500px;">
+                <img src="imagens/fit.jpg" alt="Honda Fit" style="width: 100%; border-radius: 12px;">
+                <p style="text-align: center; margin-top: 15px; font-weight: 800;">Honda Fit 2016 - Câmbio Automático e Comando Duplo</p>
             </div>
-
-            <div class="card" data-aos="flip-right" style="padding: 15px; flex: 1; min-width: 300px; max-width: 500px; display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px;">
-                <div style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; background-color: #f9f9f9; border: 1px solid #eee;">
-                    <img src="imagens/leopoldo.jpg" alt="Instrutor" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-                </div>
-                <p style="text-align: center; margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 0.9rem;">Instrutor e examinador credenciado pelo Detran/SP desde 2000</p>
+            <div class="card" data-aos="flip-right" style="max-width: 500px;">
+                <img src="imagens/leopoldo.jpg" alt="Instrutor" style="width: 100%; border-radius: 12px;">
+                <p style="text-align: center; margin-top: 15px; font-weight: 800;">Instrutor credenciado pelo Detran/SP desde 2000</p>
             </div>
-
         </div>
     </section>
 
-    <section id="depoimentos">
+    <section id="depoimentos" style="background-color: var(--gray-bg);">
         <h2 class="section-title" data-aos="zoom-in">O que dizem nossos alunos</h2>
-        <div class="grid">
-            <div class="card" data-aos="fade-up"><i class="fas fa-quote-left" style="color: var(--secondary);"></i><p style="margin: 15px 0;">"Voltei a dirigir depois de 10 anos parada. O instrutor é sensacional!"</p><strong>- Beatriz Souza</strong></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-quote-left" style="color: var(--secondary);"></i><p style="margin: 15px 0;">"A paciência do instrutor fez toda a diferença para eu perder o trauma."</p><strong>- Marcos Vinícius</strong></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-quote-left" style="color: var(--secondary);"></i><p style="margin: 15px 0;">"Hoje faço baliza de primeira graças às dicas técnicas. Super recomendo!"</p><strong>- Juliana Lima</strong></div>
-            <div class="card" data-aos="fade-up"><i class="fas fa-quote-left" style="color: var(--secondary);"></i><p style="margin: 15px 0;">"Treinamento nota 10. O carro é muito bom de dirigir e as aulas são VIP."</p><strong>- Roberto Alves</strong></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-quote-left" style="color: var(--secondary);"></i><p style="margin: 15px 0;">"Indico para quem tem medo de rodovia. Perdi o pânico em poucas aulas."</p><strong>- Fernanda Costa</strong></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-quote-left" style="color: var(--secondary);"></i><p style="margin: 15px 0;">"Profissionalismo impecável. Mudou minha rotina, hoje vou trabalhar de carro."</p><strong>- Carla Mendes</strong></div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-quote-left" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                <p style="margin: 15px 0; font-style: italic;">"Voltei a dirigir depois de 10 anos parada. O instrutor é sensacional e me passou muita calma!"</p>
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.2rem; color: #ccc;"></i> Beatriz Souza
+                </strong>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-quote-left" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                <p style="margin: 15px 0; font-style: italic;">"A paciência do instrutor fez toda a diferença para eu perder o medo do trânsito de SP."</p>
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.2rem; color: #ccc;"></i> Marcos Vinícius
+                </strong>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-quote-left" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                <p style="margin: 15px 0; font-style: italic;">"Hoje faço baliza de primeira e dirijo sozinha para o trabalho. Super recomendo o treinamento!"</p>
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.2rem; color: #ccc;"></i> Juliana Lima
+                </strong>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-quote-left" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                <p style="margin: 15px 0; font-style: italic;">"O carro é excelente para aprender e o instrutor conhece cada detalhe da Zona Sul. Nota 10!"</p>
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.2rem; color: #ccc;"></i> Ricardo Alves
+                </strong>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-quote-left" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                <p style="margin: 15px 0; font-style: italic;">"Fiz o preparo para o exame prático e passei de primeira! Gratidão total pelo suporte."</p>
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.2rem; color: #ccc;"></i> Camila Mendes
+                </strong>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-quote-left" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                <p style="margin: 15px 0; font-style: italic;">"Excelente método para quem tem traumas. Perdi o medo de rodovias em poucas aulas."</p>
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.2rem; color: #ccc;"></i> Fernando Costa
+                </strong>
+            </div>
+
         </div>
     </section>
 
@@ -225,13 +236,17 @@
                 <p><i class="fas fa-envelope"></i> lcollato@gmail.com</p>
                 <p><i class="fas fa-phone"></i> (11) 99291-6204</p>
                 <p><i class="fas fa-map-marker-alt"></i> Interlagos - São Paulo/SP </p>
-                <div style="margin-top: 25px; background: #fff3cd; padding: 15px; border-radius: 10px; font-size: 0.85rem; color: #856404; font-weight: 700; border-left: 5px solid #ffeeba;">
+                <div style="margin-top: 25px; background: #fff3cd; padding: 15px; border-radius: 10px; font-size: 0.85rem; color: #856404; font-weight: 700;">
                     <i class="fas fa-clock"></i> Atendimento: Segunda a Sábado (08h às 18h)
                 </div>
             </div>
 
             <div class="contact-box" data-aos="fade-left">
                 <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.instrutorzonasulsp.com.br/obrigado.html">
+                    <input type="hidden" name="_subject" value="Novo Contato - Instrutor Zona Sul SP">
+
                     <div class="form-group">
                         <label>Nome Completo</label>
                         <input type="text" name="nome" placeholder="Seu nome" required>
@@ -252,8 +267,8 @@
                         <label>Status da Habilitação</label>
                         <select name="status" required>
                             <option value="" disabled selected>Selecione uma opção</option>
-                            <option value="Habilitado">Já sou Habilitado (medo de dirigir)</option>
-                            <option value="Primeira Habilitação">Primeira Habilitação (Preparo para exame)</option>
+                            <option value="Habilitado">Já sou Habilitado</option>
+                            <option value="Primeira Habilitação">Primeira Habilitação</option>
                         </select>
                     </div>
 
@@ -269,20 +284,16 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Instrutor Zona Sul SP - Treinamento veicular especializado • São Paulo/SP</p>
+        <p>&copy; 2026 Instrutor Zona Sul SP • São Paulo/SP</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
-
         window.addEventListener("load", function() {
             const preloader = document.getElementById("preloader");
-            setTimeout(() => {
-                preloader.classList.add("hide-preloader");
-            }, 1200);
+            setTimeout(() => { preloader.classList.add("hide-preloader"); }, 1200);
         });
     </script>
-
 </body>
 </html>
