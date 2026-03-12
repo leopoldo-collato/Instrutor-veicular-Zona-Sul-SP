@@ -57,12 +57,12 @@
 
         /* --- FLUTUANTES --- */
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
-        .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; }
+        .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; text-decoration: none; }
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .float-face { background: #1877F2; }
 
-        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
-        .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; }
+        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none; -webkit-tap-highlight-color: transparent; }
+        .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; border: none; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
         /* --- SEÇÕES --- */
@@ -132,11 +132,11 @@
         <div class="grid">
             <div class="card" data-aos="fade-up">
                 <h3>Detran-SP altera normas para exame prático</h3>
-                <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, incluindo a retirada do teste de baliza em área demarcada conforme a Resolução 1.020 do Contran<br><br><strong>Fonte: Terra</strong></p>
+                <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, visando maior agilidade no processo de habilitação em SP.<br><br><strong>Fonte: Terra</strong></p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Veículos Automáticos Liberados</h3>
-                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos. Segunda tentativa no mesmo dia agora é possível sem taxa extra.<br><br><strong>Fonte: Exame</strong></p>
+                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos em território paulista.<br><br><strong>Fonte: Exame</strong></p>
             </div>
         </div>
     </section>
@@ -175,7 +175,7 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://www.instrutorzonasulsp.com.br/obrigado.html">
                     <input type="hidden" name="_subject" value="Novo Contato - Site Instrutor">
-                    <div class="form-group"><label>Nome</label><input type="text" name="nome" required></div>
+                    <div class="form-group"><label>Nome</label><input type="text" name="nome" required spellcheck="false"></div>
                     <div class="form-group"><label>WhatsApp</label><input type="tel" name="telefone" required></div>
                     <div class="form-group"><label>Habilitação</label><select name="status" required><option value="Habilitado">Já sou Habilitado</option><option value="Primeira">Primeira Habilitação</option></select></div>
                     <div class="form-group"><label>Mensagem</label><textarea name="mensagem" rows="2" required></textarea></div>
@@ -200,7 +200,7 @@
             <h2 style="color:var(--secondary);">Privacidade e Cookies</h2>
             <p style="margin-top:15px; font-size:0.9rem; line-height:1.6;">
                 <strong>Dados Coletados:</strong> Coletamos apenas as informações que você nos envia voluntariamente pelo formulário (nome, telefone e e-mail) para fins de orçamento.<br><br>
-                <strong>Cookies:</strong> Utilizamos cookies básicos para garantir que o site funcione corretamente e para lembrar que você já fechou este aviso.<br><br>
+                <strong>Cookies:</strong> Utilizamos cookies básicos para garantir que o site funcione corretamente e para lembrar sua preferência de privacidade.<br><br>
                 <strong>Seus Direitos:</strong> Você pode solicitar a exclusão dos seus dados a qualquer momento enviando um e-mail para lcollato@gmail.com.
             </p>
         </div>
