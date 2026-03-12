@@ -55,14 +55,14 @@
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
 
-        /* --- FLUTUANTES --- */
+        /* --- FLUTUANTES (PROTEÇÃO CONTRA TRAÇO AZUL) --- */
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
-        .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; }
+        .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; text-decoration: none; outline: none; }
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .float-face { background: #1877F2; }
 
-        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
-        .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; }
+        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none !important; border: none !important; -webkit-tap-highlight-color: transparent; }
+        .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; border: none !important; outline: none !important; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
         /* --- SEÇÕES --- */
@@ -74,14 +74,23 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
         .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 5px solid var(--secondary); }
 
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 35px; width: 100%; max-width: 1050px; }
-        .contact-info { background: white; padding: 35px; border-radius: 20px; border-left: 10px solid var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .contact-box { background: white; padding: 25px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        /* --- AJUSTE DA SEÇÃO DE CONTATO --- */
+        #contato { padding: 100px 8% 80px; min-height: auto; }
+        .contact-wrapper { 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            gap: 30px; 
+            width: 100%; 
+            max-width: 1100px; 
+            align-items: stretch; 
+        }
+        .contact-info { background: white; padding: 35px; border-radius: 20px; border-left: 10px solid var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
+        .contact-box { background: white; padding: 30px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
         
         .form-group { margin-bottom: 12px; }
         label { display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; color: #555; }
-        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; outline: none; }
-        .btn-send { background: var(--secondary); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; font-weight: 900; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; outline: none; font-size: 0.9rem; }
+        .btn-send { background: var(--secondary); color: white; border: none; width: 100%; padding: 16px; border-radius: 8px; font-weight: 900; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
         .btn-send:hover { background: var(--primary); }
 
         /* --- MODAL DE PRIVACIDADE --- */
@@ -91,7 +100,7 @@
 
         footer { background: var(--primary); color: white; padding: 35px; text-align: center; font-size: 0.85rem; }
         
-        @media (max-width: 900px) { .contact-wrapper { grid-template-columns: 1fr; } nav ul { display: none; } }
+        @media (max-width: 900px) { .contact-wrapper { grid-template-columns: 1fr; } nav ul { display: none; } #contato { padding: 80px 5% 50px; } }
     </style>
 </head>
 <body>
@@ -107,7 +116,11 @@
         <a href="https://instagram.com/instrutorzonasulsp" target="_blank" class="float-insta"><i class="fab fa-instagram"></i></a>
         <a href="https://facebook.com/instrutorzonasulsp" target="_blank" class="float-face"><i class="fab fa-facebook-f"></i></a>
     </div>
-    <a href="https://wa.me/5511992916204" class="wa-container" target="_blank"><div class="wa-icon"><i class="fab fa-whatsapp"></i></div></a>
+
+    <a href="https://wa.me/5511992916204?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula%20de%20direção%20ou%20pedir%20um%20orçamento%20%F0%9F%98%8A" 
+       class="wa-container" target="_blank">
+       <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
+    </a>
 
     <header>
         <div class="logo">INSTRUTOR <span> ZONA SUL SP </span></div>
@@ -132,11 +145,11 @@
         <div class="grid">
             <div class="card" data-aos="fade-up">
                 <h3>Detran-SP altera normas para exame prático</h3>
-                <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, incluindo a retirada do teste de baliza em área demarcada conforme a Resolução 1.020 do Contran<br><br><strong>Fonte: Terra</strong></p>
+                <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, visando maior agilidade no processo de habilitação em SP.<br><br><strong>Fonte: Terra</strong></p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Veículos Automáticos Liberados</h3>
-                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos. Segunda tentativa no mesmo dia agora é possível sem taxa extra.<br><br><strong>Fonte: Exame</strong></p>
+                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos em território paulista.<br><br><strong>Fonte: Exame</strong></p>
             </div>
         </div>
     </section>
@@ -165,21 +178,42 @@
         <h2 class="section-title">Fale Conosco</h2>
         <div class="contact-wrapper">
             <div class="contact-info">
-                <h3>Canais Oficiais</h3>
-                <p style="margin-top:20px;"><i class="fas fa-envelope"></i> lcollato@gmail.com</p>
-                <p><i class="fas fa-phone"></i> (11) 99291-6204</p>
-                <p><i class="fas fa-map-marker-alt"></i> Interlagos - São Paulo/SP</p>
+                <div>
+                    <h3>Canais Oficiais</h3>
+                    <p style="margin-top:20px;"><i class="fas fa-envelope"></i> lcollato@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 99291-6204</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Interlagos - São Paulo/SP</p>
+                </div>
+                <div style="margin-top: 30px;">
+                    <a href="https://wa.me/5511992916204?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula%20de%20direção%20ou%20pedir%20um%20orçamento%20%F0%9F%98%8A" 
+                       target="_blank" 
+                       style="background: #25d366; color: white; text-decoration: none; padding: 15px; border-radius: 8px; font-weight: 800; display: block; text-align: center; -webkit-tap-highlight-color: transparent;">
+                       <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+                </div>
             </div>
+
             <div class="contact-box">
                 <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://www.instrutorzonasulsp.com.br/obrigado.html">
                     <input type="hidden" name="_subject" value="Novo Contato - Site Instrutor">
-                    <div class="form-group"><label>Nome</label><input type="text" name="nome" required></div>
-                    <div class="form-group"><label>WhatsApp</label><input type="tel" name="telefone" required></div>
-                    <div class="form-group"><label>Habilitação</label><select name="status" required><option value="Habilitado">Já sou Habilitado</option><option value="Primeira">Primeira Habilitação</option></select></div>
-                    <div class="form-group"><label>Mensagem</label><textarea name="mensagem" rows="2" required></textarea></div>
-                    <button type="submit" class="btn-send">Enviar Mensagem</button>
+                    
+                    <div class="form-group"><label>Nome Completo</label><input type="text" name="nome" placeholder="Seu nome" required spellcheck="false"></div>
+                    <div class="form-group"><label>Telefone / WhatsApp</label><input type="tel" name="telefone" placeholder="(11) 99999-9999" required></div>
+                    <div class="form-group"><label>E-mail</label><input type="email" name="email" placeholder="seuemail@exemplo.com" required></div>
+                    <div class="form-group">
+                        <label>Motivo do Contato</label>
+                        <select name="motivo" required>
+                            <option value="" disabled selected>Selecione um motivo</option>
+                            <option value="Informação">Informação / Orçamento</option>
+                            <option value="Sugestão">Sugestão</option>
+                            <option value="Reclamação">Reclamação</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>Digite sua Mensagem</label><textarea name="mensagem" rows="3" placeholder="Como podemos ajudar?" required style="resize: none;"></textarea></div>
+                    
+                    <button type="submit" class="btn-send">Enviar Mensagem Agora</button>
                 </form>
             </div>
         </div>
@@ -199,9 +233,9 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 style="color:var(--secondary);">Privacidade e Cookies</h2>
             <p style="margin-top:15px; font-size:0.9rem; line-height:1.6;">
-                <strong>Dados Coletados:</strong> Coletamos apenas as informações que você nos envia voluntariamente pelo formulário (nome, telefone e e-mail) para fins de orçamento.<br><br>
-                <strong>Cookies:</strong> Utilizamos cookies básicos para garantir que o site funcione corretamente e para lembrar que você já fechou este aviso.<br><br>
-                <strong>Seus Direitos:</strong> Você pode solicitar a exclusão dos seus dados a qualquer momento enviando um e-mail para lcollato@gmail.com.
+                <strong>Dados Coletados:</strong> Coletamos apenas as informações que você nos envia pelo formulário (Nome, WhatsApp, E-mail, Motivo e Mensagem).<br><br>
+                <strong>Cookies:</strong> Utilizamos cookies básicos para salvar sua preferência de fechar este aviso.<br><br>
+                <strong>Seus Direitos:</strong> Seus dados são usados exclusivamente para retorno de contato. Para exclusão, envie e-mail para lcollato@gmail.com.
             </p>
         </div>
     </div>

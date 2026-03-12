@@ -178,7 +178,8 @@
                     <input type="hidden" name="_subject" value="Novo Contato - Site Instrutor">
                     <div class="form-group"><label>Nome</label><input type="text" name="nome" required spellcheck="false"></div>
                     <div class="form-group"><label>WhatsApp</label><input type="tel" name="telefone" required></div>
-                    <div class="form-group"><label>Habilitação</label><select name="status" required><option value="Habilitado">Já sou Habilitado</option><option value="Primeira">Primeira Habilitação</option></select></div>
+                    <label>Seu E-mail</label><input type="email" name="email" placeholder="exemplo@email.com" required>
+                    <div class="form-group"><label>Motivo do contato</label><select name="status" required><option value="escolha">escolha uma opção</option><option value="Habilitado">Aulas para Habilitado</option><option value="Primeira">Aulas preparatórias para exame de direção</option></select></div>
                     <div class="form-group"><label>Mensagem</label><textarea name="mensagem" rows="2" required></textarea></div>
                     <button type="submit" class="btn-send">Enviar Mensagem</button>
                 </form>
