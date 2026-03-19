@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4GKSJ2989"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B4GKSJ2989');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4GKSJ2989"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B4GKSJ2989');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <title>Instrutor Zona Sul SP | Treinamento especializado de direção veícular</title>
     <meta name="description" content="Perca o medo de dirigir na Zona Sul de SP. Treinamento especializado de direção veícular com instrutor credenciado desde 2000.">
     <meta name="keywords" content="instrutor de direção zona sul sp, treinamento para habilitados sp, medo de dirigir zona sul, aulas de direção interlagos, auto escola, cnh do brasil, cnh, habilitação">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     
     <style>
@@ -32,7 +32,6 @@
             --gray-bg: #f4f7f6;
         }
 
-        /* --- PRELOADER --- */
         #preloader {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background-color: var(--primary); display: flex; flex-direction: column;
@@ -44,7 +43,6 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hide-preloader { opacity: 0; visibility: hidden; }
 
-        /* --- CONFIGURAÇÕES GERAIS --- */
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--white); color: var(--primary); overflow-x: hidden; }
@@ -66,17 +64,15 @@
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
 
-        /* --- FLUTUANTES --- */
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
         .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; text-decoration: none; }
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .float-face { background: #1877F2; }
 
-        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none; -webkit-tap-highlight-color: transparent; }
+        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none; }
         .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; border: none; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
-        /* --- SEÇÕES --- */
         section { padding: 110px 8% 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .section-title { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; text-align: center; }
 
@@ -91,13 +87,13 @@
         
         .form-group { margin-bottom: 12px; }
         label { display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; color: #555; }
-        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; outline: none; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; outline: none; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--secondary); }
         .btn-send { background: var(--secondary); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; font-weight: 900; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
         .btn-send:hover { background: var(--primary); }
 
-        /* --- MODAL DE PRIVACIDADE --- */
         .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
-        .modal-content { background-color: #fefefe; margin: 10% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
+        .modal-content { background-color: #fefefe; margin: 5% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; max-height: 80vh; overflow-y: auto; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
         .close-modal { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
         footer { background: var(--primary); color: white; padding: 35px; text-align: center; font-size: 0.85rem; }
@@ -107,7 +103,7 @@
 </head>
 <body>
 
-    <div id="preloader">
+    <div id="preloader" role="status" aria-label="Carregando">
         <div class="loader-logo">INSTRUTOR <span> ZONA SUL SP </span></div>
         <div class="loader-circle"></div>
     </div>
@@ -115,12 +111,14 @@
     <div class="bg-road-signs"></div>
 
     <div class="social-sticky">
-        <a href="https://instagram.com/instrutorzonasulsp" target="_blank" class="float-insta"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/instrutorzonasulsp" target="_blank" class="float-face"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/instrutorzonasulsp" target="_blank" rel="noopener noreferrer" class="float-insta" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/instrutorzonasulsp" target="_blank" rel="noopener noreferrer" class="float-face" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
     </div>
-    <a href="https://wa.me/5511992916204?text=Olá!%20Gostaria%20pedir%20um%20orçamento.%20" class="wa-container" target="_blank">
-    <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
-</a>
+
+    <a href="https://wa.me/5511992916204?text=Olá!%20Gostaria%20pedir%20um%20orçamento.%20" class="wa-container" target="_blank" rel="noopener noreferrer">
+        <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
+    </a>
+
     <header>
         <div class="logo">INSTRUTOR <span> ZONA SUL SP </span></div>
         <nav>
@@ -134,103 +132,143 @@
         </nav>
     </header>
 
-    <section id="inicio">
-        <h1 style="font-size: 3.5rem; margin-bottom: 15px;" data-aos="zoom-in">Liberdade no Volante</h1>
-        <p style="font-size: 1.2rem; font-weight: 300; max-width: 800px;">Treinamento especializado de direção veícular.</p>
-    </section>
+    <main>
+        <section id="inicio">
+            <h1 style="font-size: 3.5rem; margin-bottom: 15px;" data-aos="zoom-in">Liberdade no Volante</h1>
+            <p style="font-size: 1.2rem; font-weight: 300; max-width: 800px;">Treinamento especializado de direção veícular.</p>
+        </section>
 
-    <section id="noticias">
-        <h2 class="section-title" data-aos="fade-right">Notícias</h2>
-        <div class="grid">
-            <div class="card" data-aos="fade-up">
-                <h3>Detran-SP altera normas para exame prático</h3>
-                <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, visando maior agilidade no processo de habilitação em SP.<br><br><strong>Fonte: Terra</strong></p>
+        <section id="noticias">
+            <h2 class="section-title" data-aos="fade-right">Notícias</h2>
+            <div class="grid">
+                <article class="card" data-aos="fade-up">
+                    <h3>Detran-SP altera normas para exame prático</h3>
+                    <p>O Detran-SP iniciou novas diretrizes para o exame prático da CNH, visando maior agilidade no processo de habilitação em SP.<br><br><strong>Fonte: Terra</strong></p>
+                </article>
+                <article class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Veículos Automáticos Liberados</h3>
+                    <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos em território paulista.<br><br><strong>Fonte: Exame</strong></p>
+                </article>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Veículos Automáticos Liberados</h3>
-                <p>A flexibilização autoriza o uso de carros com câmbio automático para todos os candidatos em território paulista.<br><br><strong>Fonte: Exame</strong></p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="nossa-estrutura">
-        <h2 class="section-title">Nossa Estrutura</h2>
-        <div class="grid">
-            <div class="card" style="text-align: center;"><img src="imagens/fit.jpg" style="width:100%; border-radius:10px;"><p style="margin-top:10px; font-weight:800;">Honda Fit câmbio automático</p></div>
-            <div class="card" style="text-align: center;"><img src="imagens/leopoldo.jpg" style="width:100%; border-radius:10px;"><p style="margin-top:10px; font-weight:800;">Instrutor e examinador formado credenciado Detran/SP desde 2000</p></div>
-        </div>
-    </section>
-
-    <section id="depoimentos" style="background-color: var(--gray-bg);">
-        <h2 class="section-title">Depoimentos</h2>
-        <div class="grid">
-            <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Voltei a dirigir depois de 10 anos parada. Calma total!"</p><strong><i class="fas fa-user-circle"></i> Beatriz Souza</strong></div>
-            <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"A paciência do instrutor fez toda a diferença."</p><strong><i class="fas fa-user-circle"></i> Marcos Vinícius</strong></div>
-            <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Hoje faço baliza de primeira. Super recomendo!"</p><strong><i class="fas fa-user-circle"></i> Juliana Lima</strong></div>
-            <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Carro excelente e instrutor nota 10!"</p><strong><i class="fas fa-user-circle"></i> Ricardo Alves</strong></div>
-            <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Passei de primeira no exame prático. Gratidão!"</p><strong><i class="fas fa-user-circle"></i> Camila Mendes</strong></div>
-            <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Perdi o medo de rodovias em poucas aulas."</p><strong><i class="fas fa-user-circle"></i> Fernando Costa</strong></div>
-        </div>
-    </section>
-
-    <section id="contato">
-        <h2 class="section-title">Fale Conosco</h2>
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <h3>Canais Oficiais</h3>
-                <p style="margin-top:20px;"><i class="fas fa-envelope"></i> lcollato@gmail.com</p>
-                <p><i class="fas fa-phone"></i> (11) 99291-6204</p>
-                <p><i class="fas fa-map-marker-alt"></i> Interlagos - São Paulo/SP</p>
+        <section id="nossa-estrutura">
+            <h2 class="section-title">Nossa Estrutura</h2>
+            <div class="grid">
+                <div class="card" style="text-align: center;"><img src="imagens/fit.jpg" alt="Honda Fit Prata" style="width:100%; border-radius:10px;"><p style="margin-top:10px; font-weight:800;">Honda Fit câmbio automático</p></div>
+                <div class="card" style="text-align: center;"><img src="imagens/leopoldo.jpg" alt="Credencial Instrutor" style="width:100%; border-radius:10px;"><p style="margin-top:10px; font-weight:800;">Instrutor credenciado Detran/SP desde 2000</p></div>
             </div>
-            <div class="contact-box">
-                <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://www.instrutorzonasulsp.com.br/obrigado.html">
-                    <input type="hidden" name="_subject" value="Novo Contato - Site Instrutor">
-                    <div class="form-group"><label>Nome</label><input type="text" name="nome" required spellcheck="false"></div>
-                    <div class="form-group"><label>WhatsApp</label><input type="tel" name="telefone" required></div>
-                    <label>Seu E-mail</label><input type="email" name="email" placeholder="exemplo@email.com" required>
-                    <div class="form-group"><label>Motivo do contato</label><select name="status" required><option value="escolha">escolha uma opção</option><option value="Habilitado">Aulas para Habilitado</option><option value="Primeira">Aulas preparatórias para exame de direção</option></select></div>
-                    <div class="form-group"><label>Mensagem</label><textarea name="mensagem" rows="2" required></textarea></div>
-                    <button type="submit" class="btn-send">Enviar Mensagem</button>
-                </form>
+        </section>
+
+        <section id="depoimentos" style="background-color: var(--gray-bg);">
+            <h2 class="section-title">Depoimentos</h2>
+            <div class="grid">
+                <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Voltei a dirigir depois de 10 anos parada. Calma total!"</p><strong><i class="fas fa-user-circle"></i> Beatriz Souza</strong></div>
+                <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"A paciência do instrutor fez toda a diferença."</p><strong><i class="fas fa-user-circle"></i> Marcos Vinícius</strong></div>
+                <div class="card"><i class="fas fa-quote-left" style="color:var(--secondary);"></i><p style="margin:15px 0;">"Hoje faço baliza de primeira. Super recomendo!"</p><strong><i class="fas fa-user-circle"></i> Juliana Lima</strong></div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="contato">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Canais Oficiais</h3>
+                    <p style="margin-top:20px;"><i class="fas fa-envelope"></i> lcollato [at] gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 99291-6204</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Interlagos - São Paulo/SP</p>
+                </div>
+                <div class="contact-box">
+                    <form action="https://formsubmit.co/lcollato@gmail.com" method="POST" id="mainContactForm">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://www.instrutorzonasulsp.com.br/obrigado.html">
+                        <input type="hidden" name="_subject" value="Novo Contato - Site Instrutor">
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required minlength="3" maxlength="100" pattern="[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]+">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Seu E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Motivo do contato</label>
+                            <select id="status" name="status" required>
+                                <option value="">Escolha uma opção</option>
+                                <option value="Habilitado">Aulas para Habilitado</option>
+                                <option value="Primeira">Preparação para exame</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="2" required maxlength="500"></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Instrutor Zona Sul SP • Create by Leopoldo Collato <a href="javascript:void(0)" onclick="openModal()" style="color:white; text-decoration:underline;">Privacidade e Cookies</a></p>
+        <p>&copy; 2026 Instrutor Zona Sul SP • <a href="javascript:void(0)" onclick="openModal()" style="color:white; text-decoration:underline;">Privacidade e Cookies</a></p>
     </footer>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:20px; right:20px; background:white; padding:20px; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.3); z-index:9000; border:2px solid var(--secondary); max-width:600px; margin:0 auto;">
-        <p style="font-size:0.85rem; margin-bottom:10px;">Usamos cookies para melhorar sua experiência. Ao navegar, você concorda com nossa <a href="javascript:void(0)" onclick="openModal()" style="color:var(--secondary);">política de privacidade</a>.</p>
+        <p style="font-size:0.85rem; margin-bottom:10px;">Para sua segurança e melhor experiência, usamos cookies conforme nossa política de privacidade.</p>
         <button onclick="aceitarCookies()" style="background:var(--secondary); color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer; font-weight:800;">ACEITAR</button>
     </div>
 
-    <div id="modalPrivacidade" class="modal">
+    <div id="modalPrivacidade" class="modal" aria-hidden="true">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 style="color:var(--secondary);">Privacidade e Cookies</h2>
-            <p style="margin-top:15px; font-size:0.9rem; line-height:1.6;">
-                <strong>Dados Coletados:</strong> Coletamos apenas as informações que você nos envia voluntariamente pelo formulário (nome, telefone e e-mail) para fins de orçamento.<br><br>
-                <strong>Cookies:</strong> Utilizamos cookies básicos para garantir que o site funcione corretamente e para lembrar sua preferência de privacidade.<br><br>
-                <strong>Seus Direitos:</strong> Você pode solicitar a exclusão dos seus dados a qualquer momento enviando um e-mail para lcollato@gmail.com.
-            </p>
+            <div style="margin-top:15px; font-size:0.9rem; line-height:1.6; color: #333;">
+                <p><strong>Segurança de Dados:</strong> Seus dados são transmitidos de forma segura e utilizados apenas para o retorno do contato solicitado.</p><br>
+                <p><strong>LGPD:</strong> Em conformidade com a Lei Geral de Proteção de Dados, você tem direito ao acesso, correção ou exclusão de suas informações através do e-mail oficial.</p><br>
+                <p><strong>Cookies:</strong> Utilizamos apenas cookies técnicos essenciais para o funcionamento do site e analytics anônimo.</p>
+            </div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inicialização Segura
         AOS.init({ duration: 1000, once: true });
+
         window.addEventListener("load", function() {
-            setTimeout(() => { document.getElementById("preloader").classList.add("hide-preloader"); }, 1000);
-            if (!localStorage.getItem('cookiesAceitos')) { document.getElementById('cookie-banner').style.display = 'block'; }
+            setTimeout(() => { 
+                const preloader = document.getElementById("preloader");
+                if(preloader) preloader.classList.add("hide-preloader"); 
+            }, 800);
+            
+            if (!localStorage.getItem('cookiesAceitos')) { 
+                document.getElementById('cookie-banner').style.display = 'block'; 
+            }
         });
 
+        // Funções de Interface
         function aceitarCookies() { localStorage.setItem('cookiesAceitos', 'true'); document.getElementById('cookie-banner').style.display = 'none'; }
-        function openModal() { document.getElementById('modalPrivacidade').style.display = 'block'; }
-        function closeModal() { document.getElementById('modalPrivacidade').style.display = 'none'; }
-        window.onclick = function(event) { if (event.target == document.getElementById('modalPrivacidade')) { closeModal(); } }
+        function openModal() { document.getElementById('modalPrivacidade').style.display = 'block'; document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('modalPrivacidade').style.display = 'none'; document.body.style.overflow = 'auto'; }
+        
+        // Fechar modal ao clicar fora
+        window.onclick = function(e) { if (e.target == document.getElementById('modalPrivacidade')) { closeModal(); } }
+
+        // Validação básica de segurança no Front-end
+        document.getElementById('mainContactForm').onsubmit = function(e) {
+            const msg = document.getElementById('mensagem').value;
+            if(msg.includes('<script>') || msg.includes('href=')) {
+                alert('Conteúdo inválido detectado na mensagem.');
+                e.preventDefault();
+                return false;
+            }
+        };
     </script>
 </body>
 </html>
