@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Link para o seu mapa do site (ajuda o Google a encontrar suas seções mais rápido)
-Sitemap: https://leopoldo-collato.github.io/Instrutor-veicular-Zona-Sul-SP/sitemap.xml
+Sitemap: https://www.instrutorzonasulsp.com.br
