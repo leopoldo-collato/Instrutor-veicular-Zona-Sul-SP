@@ -60,7 +60,7 @@
         .btn-entendi { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; width: 100%; transition: 0.3s; }
         .btn-entendi:hover { background: var(--secondary); }
 
-        /* --- ESTILOS GERAIS --- */
+        /* --- CONFIGURAÇÕES GERAIS --- */
         #preloader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--primary); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.8s; }
         .loader-logo { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
         .loader-logo span { color: var(--secondary); }
@@ -80,6 +80,21 @@
         nav ul { display: flex; list-style: none; gap: 20px; }
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
+
+        /* AJUSTE HAMBURGUER */
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--secondary); cursor: pointer; }
+
+        @media (max-width: 1024px) {
+            .menu-toggle { display: block; }
+            nav ul {
+                position: absolute; top: 75px; left: -100%; flex-direction: column;
+                background: var(--primary); width: 100%; height: calc(100vh - 75px);
+                text-align: center; padding-top: 30px; transition: 0.4s;
+            }
+            nav ul.active { left: 0; }
+            nav ul li { margin: 15px 0; }
+            nav ul li a { font-size: 1.1rem; }
+        }
 
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
         .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; text-decoration: none; outline: none; }
@@ -109,7 +124,7 @@
 <body>
 
     <div id="balao-senatran">
-        <p><span>Instrutor autorizado</span> pelo SENATRAN a dar aula no sistema <span>CNH DO BRASIL</span></p>
+        <p><span>Instrutor autorizado</span> pelo SENATRAN para dar aula no sistema <span>"CNH DO BRASIL"</span></p>
         <button class="btn-entendi" onclick="fecharBalao()">Entendi</button>
     </div>
 
@@ -131,13 +146,14 @@
 
     <header>
         <div class="logo">INSTRUTOR <span> ZONA SUL SP </span></div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#nossa-estrutura">Nossa estrutura</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+            <ul id="nav-menu">
+                <li><a href="#inicio" onclick="toggleMenu()">Início</a></li>
+                <li><a href="#noticias" onclick="toggleMenu()">Notícias</a></li>
+                <li><a href="#nossa-estrutura" onclick="toggleMenu()">Nossa estrutura</a></li>
+                <li><a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a></li>
+                <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -194,13 +210,13 @@
             <div class="contact-wrapper" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1000px;">
                 <div class="contact-info" style="flex: 1; min-width: 280px; background: var(--gray-bg); padding: 25px; border-radius: 15px; border-left: 6px solid var(--secondary);">
                     <h3>Canais Oficiais</h3>
-                    <p style="margin-bottom: 12px; font-size: 0.9rem; word-break: break-all;"><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> lcollato@gmail.com</p>
-                    <p style="margin-bottom: 12px; font-size: 0.9rem;"><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> (11) 99291-6204</p>
-                    <p style="margin-bottom: 15px; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
+                    <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> lcollato@gmail.com</p>
+                    <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> (11) 99291-6204</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
                     
-                    <div>
-                        <p style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--secondary); margin-bottom: 2px;">Horário de atendimento</p>
-                        <p style="font-size: 0.9rem; font-weight: 600;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 8px;"></i> De segunda à sábado: das 8:00 às 19:00hs</p>
+                    <div style="margin-top: 15px;">
+                        <p style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); text-transform: uppercase;">Horário de atendimento</p>
+                        <p style="font-weight: 600;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 8px;"></i> De segunda à sabado: das 8:00 às 19:00hs</p>
                     </div>
                 </div>
                 <div class="contact-box" style="flex: 1.2; min-width: 280px; background: white; padding: 20px; border-radius: 15px; border: 2px solid var(--secondary);">
@@ -230,7 +246,7 @@
     </footer>
 
     <div id="modalPrivacidade" class="modal">
-        <div class="modal-content"><span style="cursor:pointer; float:right;" onclick="closeModal()">&times;</span><h2>Privacidade</h2><p>Dados utilizados apenas para retorno de contato solicitado.</p></div>
+        <div class="modal-content"><span style="cursor:pointer; float:right;" onclick="closeModal()">&times;</span><h2>Privacidade</h2><p>Dados utilizados apenas para retorno de contato.</p></div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -253,6 +269,12 @@
 
         function openModal() { document.getElementById('modalPrivacidade').style.display = 'block'; }
         function closeModal() { document.getElementById('modalPrivacidade').style.display = 'none'; }
+
+        function toggleMenu() {
+            if (window.innerWidth <= 1024) {
+                document.getElementById("nav-menu").classList.toggle("active");
+            }
+        }
     </script>
 </body>
 </html>
