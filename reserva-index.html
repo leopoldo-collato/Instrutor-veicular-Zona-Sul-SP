@@ -81,6 +81,21 @@
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
 
+        /* AJUSTE HAMBURGUER */
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--secondary); cursor: pointer; }
+
+        @media (max-width: 1024px) {
+            .menu-toggle { display: block; }
+            nav ul {
+                position: absolute; top: 75px; left: -100%; flex-direction: column;
+                background: var(--primary); width: 100%; height: calc(100vh - 75px);
+                text-align: center; padding-top: 30px; transition: 0.4s;
+            }
+            nav ul.active { left: 0; }
+            nav ul li { margin: 15px 0; }
+            nav ul li a { font-size: 1.1rem; }
+        }
+
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
         .social-sticky a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; margin-bottom: 5px; border-radius: 0 8px 8px 0; transition: 0.3s; text-decoration: none; outline: none; }
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -131,13 +146,14 @@
 
     <header>
         <div class="logo">INSTRUTOR <span> ZONA SUL SP </span></div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#nossa-estrutura">Nossa estrutura</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+            <ul id="nav-menu">
+                <li><a href="#inicio" onclick="toggleMenu()">Início</a></li>
+                <li><a href="#noticias" onclick="toggleMenu()">Notícias</a></li>
+                <li><a href="#nossa-estrutura" onclick="toggleMenu()">Nossa estrutura</a></li>
+                <li><a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a></li>
+                <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -195,9 +211,13 @@
                 <div class="contact-info" style="flex: 1; min-width: 280px; background: var(--gray-bg); padding: 25px; border-radius: 15px; border-left: 6px solid var(--secondary);">
                     <h3>Canais Oficiais</h3>
                     <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> lcollato@gmail.com</p>
-                    <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> (11) 99291-6204</p>
+                    <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> Whatsapp: (11) 99291-6204</p>
                     <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
                     
+                    <div style="margin-top: 15px;">
+                        <p style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); text-transform: uppercase;">Horário de atendimento</p>
+                        <p style="font-weight: 600;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 8px;"></i> De segunda à sábado: das 8:00 às 19:00hs</p>
+                    </div>
                 </div>
                 <div class="contact-box" style="flex: 1.2; min-width: 280px; background: white; padding: 20px; border-radius: 15px; border: 2px solid var(--secondary);">
                     <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
@@ -249,6 +269,12 @@
 
         function openModal() { document.getElementById('modalPrivacidade').style.display = 'block'; }
         function closeModal() { document.getElementById('modalPrivacidade').style.display = 'none'; }
+
+        function toggleMenu() {
+            if (window.innerWidth <= 1024) {
+                document.getElementById("nav-menu").classList.toggle("active");
+            }
+        }
     </script>
 </body>
 </html>
