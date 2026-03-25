@@ -60,7 +60,7 @@
         .btn-entendi { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; width: 100%; transition: 0.3s; }
         .btn-entendi:hover { background: var(--secondary); }
 
-        /* --- CONFIGURAÇÕES GERAIS --- */
+        /* --- ESTILOS GERAIS --- */
         #preloader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--primary); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.8s; }
         .loader-logo { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
         .loader-logo span { color: var(--secondary); }
@@ -109,7 +109,7 @@
 <body>
 
     <div id="balao-senatran">
-        <p><span>Instrutor autorizado</span> pelo SENATRAN para dar aula no sistema <span>"CNH DO BRASIL"</span></p>
+        <p><span>Instrutor autorizado</span> pelo SENATRAN a dar aula no sistema <span>CNH DO BRASIL</span></p>
         <button class="btn-entendi" onclick="fecharBalao()">Entendi</button>
     </div>
 
@@ -194,9 +194,14 @@
             <div class="contact-wrapper" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1000px;">
                 <div class="contact-info" style="flex: 1; min-width: 280px; background: var(--gray-bg); padding: 25px; border-radius: 15px; border-left: 6px solid var(--secondary);">
                     <h3>Canais Oficiais</h3>
-                    <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> lcollato@gmail.com</p>
-                    <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> (11) 99291-6204</p>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
+                    <p style="margin-bottom: 12px; font-size: 0.9rem; word-break: break-all;"><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> lcollato@gmail.com</p>
+                    <p style="margin-bottom: 12px; font-size: 0.9rem;"><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> (11) 99291-6204</p>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
+                    
+                    <div>
+                        <p style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--secondary); margin-bottom: 2px;">Horário de atendimento</p>
+                        <p style="font-size: 0.9rem; font-weight: 600;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 8px;"></i> De segunda à sabado: das 8:00 às 19:00hs</p>
+                    </div>
                 </div>
                 <div class="contact-box" style="flex: 1.2; min-width: 280px; background: white; padding: 20px; border-radius: 15px; border: 2px solid var(--secondary);">
                     <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
@@ -225,7 +230,7 @@
     </footer>
 
     <div id="modalPrivacidade" class="modal">
-        <div class="modal-content"><span style="cursor:pointer; float:right;" onclick="closeModal()">&times;</span><h2>Privacidade</h2><p>Dados utilizados apenas para retorno de contato.</p></div>
+        <div class="modal-content"><span style="cursor:pointer; float:right;" onclick="closeModal()">&times;</span><h2>Privacidade</h2><p>Dados utilizados apenas para retorno de contato solicitado.</p></div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
