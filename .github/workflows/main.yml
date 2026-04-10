@@ -32,4 +32,4 @@ jobs:
         localDir: "./leopoldo-collato
 Instrutor-veicular-Zona-Sul-SP"
 
-        remoteDir: "./public_html/"
+        remoteDir: ".//home/instrutorzonasul1/public_html/"
