@@ -31,6 +31,4 @@ jobs:
 
         localDir: "./"
 
-        remoteDir: "./public_html/"l-SP"
-
-        remoteDir: ".//home/instrutorzonasul1/public_html/"
+        remoteDir: "./public_html/"
