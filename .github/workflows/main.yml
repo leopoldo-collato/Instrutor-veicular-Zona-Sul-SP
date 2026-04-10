@@ -23,12 +23,13 @@ jobs:
 
       with:
 
-        host: ${{ secrets.HOST }} 
+        host: ${{ ftp.instrutorzonasulsp.com.br }} 
 
-        user: ${{ secrets.USER }}
+        user: ${{ instrutorzonasul1 }}
 
-        password: ${{ secrets.PASS }}
+        password: ${{ Lmc@2025!!!!!! }}
 
-        localDir: "./"
+        localDir: "./leopoldo-collato
+Instrutor-veicular-Zona-Sul-SP"
 
         remoteDir: "./public_html/"
