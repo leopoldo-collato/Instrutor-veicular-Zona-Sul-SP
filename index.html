@@ -31,6 +31,33 @@
             --gray-bg: #f4f7f6;
         }
 
+        /* --- BARRA DE COOKIES --- */
+        #cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9500;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            font-size: 0.85rem;
+        }
+        #cookie-bar button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 800;
+            margin-left: 15px;
+        }
+
         /* --- BALÃO SENATRAN COM BRILHO --- */
         #balao-senatran {
             position: fixed;
@@ -82,9 +109,9 @@
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
 
-        /* AJUSTE HAMBURGUER */
         .menu-toggle { display: none; font-size: 1.5rem; color: var(--secondary); cursor: pointer; }
 
+        /* AJUSTES DE RESPONSIVIDADE */
         @media (max-width: 1024px) {
             .menu-toggle { display: block; }
             nav ul {
@@ -95,6 +122,14 @@
             nav ul.active { left: 0; }
             nav ul li { margin: 15px 0; }
             nav ul li a { font-size: 1.1rem; }
+            
+            #cookie-bar { flex-direction: column; text-align: center; gap: 10px; padding: 20px; }
+            #cookie-bar button { margin-left: 0; width: 100%; }
+            #balao-senatran { right: 20px; left: 20px; bottom: 100px; max-width: none; }
+            
+            section { padding: 100px 5% 40px; }
+            #inicio h1 { font-size: 2.2rem !important; }
+            .section-title { font-size: 1.8rem; }
         }
 
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
@@ -102,13 +137,13 @@
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .float-face { background: #1877F2; }
 
-        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none !important; border: none !important; }
+        .wa-container { position: fixed; bottom: 80px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none !important; border: none !important; }
         .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
         section { padding: 110px 8% 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .section-title { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
         .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 5px solid var(--secondary); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;}
         
         .img-container-full { width: 100%; height: 250px; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 15px; background-color: #f9f9f9; border-radius: 10px; }
@@ -118,11 +153,16 @@
         label { display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; color: #555; }
 
         footer { background: var(--primary); color: white; padding: 35px; text-align: center; font-size: 0.85rem; }
-        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
         .modal-content { background-color: #fefefe; margin: 10% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; }
     </style>
 </head>
 <body>
+
+    <div id="cookie-bar">
+        <p>Este site utiliza cookies para garantir que você obtenha a melhor experiência. <a href="javascript:void(0)" onclick="openModal()" style="color:var(--secondary)">Saiba mais</a></p>
+        <button onclick="aceitarCookies()">ACEITAR</button>
+    </div>
 
     <div id="balao-senatran">
         <p><span>Instrutor autorizado</span> pelo SENATRAN para dar aula no sistema <span>"CNH DO BRASIL"</span></p>
@@ -262,7 +302,17 @@
             setTimeout(() => {
                 document.getElementById('balao-senatran').style.display = 'block';
             }, 1500);
+
+            // Verifica se cookies já foram aceitos
+            if (localStorage.getItem("cookiesAceitos") === "true") {
+                document.getElementById("cookie-bar").style.display = "none";
+            }
         });
+
+        function aceitarCookies() {
+            localStorage.setItem("cookiesAceitos", "true");
+            document.getElementById("cookie-bar").style.display = "none";
+        }
 
         function fecharBalao() {
             document.getElementById('balao-senatran').style.display = 'none';
