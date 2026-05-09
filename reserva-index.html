@@ -12,15 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+    <link rel="shortcut icon" href="imagens/favicon.jpg" type="image/x-icon">
+   
     <title>Instrutor Zona Sul SP | Treinamento especializado de direção veícular</title>
-    <meta name="description" content="Perca o medo de dirigir!  Treinamento especializado de direção veícular com instrutor credenciado desde 2000.">
-    <meta name="keywords" content="instrutor de direção zona sul sp, treinamento para habilitados sp, medo de dirigir zona sul, aulas de direção interlagos, auto escola, cnh do brasil, cnh, habilitação">
-    
+    <meta name="description" content="Perca o medo de dirigir!  Treinamento especializado de direção veícular com instrutor credenciado pelo Detran/SP desde 2000.">
+    <meta name="keywords" content="instrutor na zona sul sp, instrutor de direção zona sul sp, treinamento para habilitados sp, medo de dirigir zona sul, aulas de direção interlagos, auto escola, cnh do brasil, cnh, habilitação">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    
+   
     <style>
         :root {
             --primary: #0a192f;
@@ -28,6 +29,33 @@
             --success: #25d366;
             --white: #ffffff;
             --gray-bg: #f4f7f6;
+        }
+
+        /* --- BARRA DE COOKIES --- */
+        #cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9500;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            font-size: 0.85rem;
+        }
+        #cookie-bar button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 800;
+            margin-left: 15px;
         }
 
         /* --- BALÃO SENATRAN COM BRILHO --- */
@@ -53,20 +81,49 @@
         }
 
         @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        
+       
         #balao-senatran p { font-size: 0.95rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; line-height: 1.4; }
         #balao-senatran span { color: var(--secondary); }
-        
+       
         .btn-entendi { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; width: 100%; transition: 0.3s; }
         .btn-entendi:hover { background: var(--secondary); }
 
-        /* --- CONFIGURAÇÕES GERAIS --- */
-        #preloader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--primary); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.8s; }
-        .loader-logo { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+        /* --- CONFIGURAÇÕES GERAIS E PRELOADER CORRIGIDO --- */
+        #preloader { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background-color: var(--primary); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 9999; 
+            transition: 3.0s; 
+            padding: 20px; /* Adicionado padding para mobile */
+        }
+        .loader-logo { 
+            color: white; 
+            font-size: 1.8rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin-bottom: 20px; 
+            text-align: center; /* Centralizar texto */
+            max-width: 100%; /* Não estourar largura */
+        }
         .loader-logo span { color: var(--secondary); }
-        .loader-circle { width: 45px; height: 45px; border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 1s linear infinite; }
+        .loader-circle { width: 45px; height: 45px; border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 2s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .hide-preloader { opacity: 0; visibility: hidden; }
+        .hide-preloader { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        /* Media query específica para diminuir o texto do loader em celulares pequenos */
+        @media (max-width: 480px) {
+            .loader-logo {
+                font-size: 1.3rem;
+            }
+        }
 
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -81,9 +138,9 @@
         nav ul li a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
 
-        /* AJUSTE HAMBURGUER */
         .menu-toggle { display: none; font-size: 1.5rem; color: var(--secondary); cursor: pointer; }
 
+        /* AJUSTES DE RESPONSIVIDADE */
         @media (max-width: 1024px) {
             .menu-toggle { display: block; }
             nav ul {
@@ -94,6 +151,19 @@
             nav ul.active { left: 0; }
             nav ul li { margin: 15px 0; }
             nav ul li a { font-size: 1.1rem; }
+           
+            #cookie-bar { flex-direction: column; text-align: center; gap: 10px; padding: 20px; }
+            #cookie-bar button { margin-left: 0; width: 100%; }
+            #balao-senatran { right: 20px; left: 20px; bottom: 100px; max-width: none; }
+           
+            section { padding: 100px 5% 40px; }
+            #inicio h1 { font-size: 2.2rem !important; }
+            .section-title { font-size: 1.8rem; }
+
+            .contact-info { padding: 15px !important; }
+            .contact-info h3 { font-size: 1.1rem; margin-bottom: 10px; }
+            .contact-info p { font-size: 0.8rem !important; margin-bottom: 8px !important; line-height: 1.2; }
+            .contact-info div p { font-size: 0.7rem !important; }
         }
 
         .social-sticky { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 3000; display: flex; flex-direction: column; }
@@ -101,27 +171,44 @@
         .float-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .float-face { background: #1877F2; }
 
-        .wa-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none !important; border: none !important; }
+        .wa-container { position: fixed; bottom: 80px; right: 30px; z-index: 2000; text-decoration: none !important; outline: none !important; border: none !important; }
         .wa-icon { background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
         section { padding: 110px 8% 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .section-title { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
         .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 5px solid var(--secondary); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;}
-        
-        .img-container-full { width: 100%; height: 250px; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 15px; background-color: #f9f9f9; border-radius: 10px; }
-        .img-container-full img { max-width: 100%; max-height: 100%; object-fit: contain; }
+       
+        .img-container-full { width: 100%; height: 250px; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 5px; background-color: transparent; border-radius: 10px; }
+       
+        /* SOLUÇÃO DEFINITIVA PARA RETIRAR O FUNDO */
+        .img-autoescola-final {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Filtros combinados para eliminar o fundo cinza/claro e manter a borda */
+            mix-blend-mode: multiply;
+            filter: contrast(1.1) brightness(1.1);
+            border: 3px solid var(--secondary);
+            border-radius: 15px;
+            padding: 5px;
+        }
 
         input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; outline: none; }
         label { display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; color: #555; }
 
         footer { background: var(--primary); color: white; padding: 35px; text-align: center; font-size: 0.85rem; }
-        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
         .modal-content { background-color: #fefefe; margin: 10% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; }
     </style>
 </head>
 <body>
+
+    <div id="cookie-bar">
+        <p>Este site utiliza cookies para garantir que você obtenha a melhor experiência. <a href="javascript:void(0)" onclick="openModal()" style="color:var(--secondary)">Saiba mais</a></p>
+        <button onclick="aceitarCookies()">ACEITAR</button>
+    </div>
 
     <div id="balao-senatran">
         <p><span>Instrutor autorizado</span> pelo SENATRAN para dar aula no sistema <span>"CNH DO BRASIL"</span></p>
@@ -129,7 +216,7 @@
     </div>
 
     <div id="preloader" role="status" aria-label="Carregando">
-        <div class="loader-logo">INSTRUTOR <span> ZONA SUL SP </span></div>
+        <div class="loader-logo">INSTRUTOR<span> ZONA SUL SP </span></div>
         <div class="loader-circle"></div>
     </div>
 
@@ -151,7 +238,7 @@
             <ul id="nav-menu">
                 <li><a href="#inicio" onclick="toggleMenu()">Início</a></li>
                 <li><a href="#noticias" onclick="toggleMenu()">Notícias</a></li>
-                <li><a href="#nossa-estrutura" onclick="toggleMenu()">Nossa estrutura</a></li>
+                <li><a href="#nossos-servicos" onclick="toggleMenu()">Nossos serviços</a></li>
                 <li><a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a></li>
                 <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
             </ul>
@@ -159,10 +246,17 @@
     </header>
 
     <main>
-        <section id="inicio" style="background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200'); background-size: cover; color: white; text-align: center;">
+        <section id="inicio" style="background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1593950315186-76a92975b60c?w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; text-align: center;">
             <h1 style="font-size: 3.5rem; margin-bottom: 15px;" data-aos="zoom-in">Liberdade no Volante</h1>
-            <p style="font-size: 1.2rem; font-weight: 300;">Aprenda as técnicas essenciais e desenvolva confiança!</p>
-            <p style="font-size: 1.2rem; font-weight: 300;">Torne-se um motorista seguro e experiente!</p>
+            <p style="font-size: 1.2rem; font-weight: 150;">Aprenda as técnicas essenciais e desenvolva confiança!</p>
+            <br>
+            <p style="font-size: 1.2rem; font-weight: 300;">"Aulas de direção CNH do Brasil e para Habilitados com medo de dirigir"</p>
+            <br>
+            <div class="image-autoescola-final" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-container-full">
+                        <img src="imagens/autoescola.jpg" alt="Instrutor Leopoldo" class="img-autoescola-final">
+                    </div>
+                </div>
         </section>
 
         <section id="noticias">
@@ -179,19 +273,18 @@
             </div>
         </section>
 
-        <section id="nossa-estrutura">
-            <h2 class="section-title">Nossa Estrutura</h2>
-            <div class="grid">
-                <div class="card" data-aos="fade-up">
-                    <div class="img-container-full"><img src="imagens/fit.jpg" alt="Honda Fit"></div>
-                    <p style="font-weight:800;">Honda Fit câmbio automático</p>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="img-container-full"><img src="imagens/leopoldo.jpg" alt="Instrutor Leopoldo"></div>
-                    <p style="font-weight:800;">Instrutor credenciado pelo Detran/SP desde 2000</p>
-                </div>
-            </div>
-        </section>
+        <section id="nossos-servicos">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <div class="card" style="text-align: justify; max-width: 900px; padding: 40px; line-height: 1.8;">
+        <p>🚗 Seja bem-vindo ao padrão de excelência aqui no Instrutor Zona Sul SP. Nossa missão vai muito além de ensinar a operar um veículo; entregamos a chave para a sua independência e liberdade de locomoção. Com 26 anos de experiência credenciado pelo Detran/SP e Senatran (CNH DO BRASIL), desenvolvemos uma metodologia exclusiva que une técnica avançada e suporte emocional, garantindo que cada aluno alcance seus objetivos com máxima segurança.
+<br><br>
+Oferecemos aulas preparatórias para exame de direção focadas em quem deseja conquistar a CNH sem estresse. Entendemos cada detalhe das exigências dos examinadores e trabalhamos os pontos críticos — como o conhecimento do percurso, a precisão nas manobras e a sinalização correta — para que você chegue no dia da prova com a confiança de quem já domina o percurso. Nosso índice de aprovação reflete um treinamento sério, pautado na calma e na repetição estratégica.
+<br><br>
+Para quem já possui a carteira de habilitação, mas sente insegurança, oferecemos aulas para habilitados com medo de dirigir. Sabemos que o trânsito de São Paulo pode ser intimidante, mas ninguém nasceu sabendo dominar avenidas movimentadas ou rodovias complexas. Atuamos diretamente na raiz do receio, desmistificando o volante e devolvendo o prazer de dirigir. Você aprenderá a lidar com situações reais, como trocas de faixa em horários de pico, estacionamento em locais apertados e subidas íngremes.
+<br><br>
+O grande diferencial do nosso trabalho é o acompanhamento personalizado. Não trabalhamos com fórmulas prontas, pois cada condutor possui um ritmo e uma necessidade específica. Analisamos o seu perfil, identificamos onde estão os seus maiores desafios e montamos um plano de aula sob medida para você. Seja no conforto do nosso Honda Fit automático com comando duplo ou em trajetos que fazem parte da sua rotina diária, estamos ao seu lado em todo momento.</p>
+    </div>
+</section>
 
         <section id="depoimentos" style="background-color: var(--gray-bg);">
             <h2 class="section-title" data-aos="fade-up">Depoimentos</h2>
@@ -210,17 +303,17 @@
             <div class="contact-wrapper" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1000px;">
                 <div class="contact-info" style="flex: 1; min-width: 280px; background: var(--gray-bg); padding: 25px; border-radius: 15px; border-left: 6px solid var(--secondary);">
                     <h3>Canais Oficiais</h3>
-                    <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> lcollato@gmail.com</p>
+                    <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> atendimento@instrutorzonasulsp.com.br</p>
                     <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> Whatsapp: (11) 99291-6204</p>
                     <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
-                    
+                   
                     <div style="margin-top: 15px;">
                         <p style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); text-transform: uppercase;">Horário de atendimento</p>
                         <p style="font-weight: 600;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 8px;"></i> De segunda à sábado: das 8:00 às 19:00hs</p>
                     </div>
                 </div>
                 <div class="contact-box" style="flex: 1.2; min-width: 280px; background: white; padding: 20px; border-radius: 15px; border: 2px solid var(--secondary);">
-                    <form action="https://formsubmit.co/lcollato@gmail.com" method="POST">
+                    <form action="https://formsubmit.co/atendimento@instrutorzonasulsp.com.br" method="POST">
                         <input type="hidden" name="_captcha" value="false">
                         <label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required>
                         <label>Telefone</label><input type="tel" name="telefone" placeholder="(11) 99999-9999" required>
@@ -233,7 +326,7 @@
                             <option value="duvida">Dúvida</option>
                         </select>
                         <label>Mensagem</label>
-                        <textarea name="mensagem" rows="2" placeholder="Como ajudar?" required style="resize:none;"></textarea>
+                        <textarea name="mensagem" rows="2" placeholder="Digite aqui sua mensagem" required style="resize:none;"></textarea>
                         <button type="submit" style="background: var(--secondary); color: white; border: none; width: 100%; padding: 14px; border-radius: 6px; font-weight: 900; cursor: pointer; text-transform: uppercase;">ENVIAR</button>
                     </form>
                 </div>
@@ -254,14 +347,24 @@
         AOS.init({ duration: 1000, once: true });
 
         window.addEventListener("load", function() {
-            setTimeout(() => { 
-                document.getElementById("preloader").classList.add("hide-preloader"); 
+            setTimeout(() => {
+                document.getElementById("preloader").classList.add("hide-preloader");
             }, 800);
-            
+           
             setTimeout(() => {
                 document.getElementById('balao-senatran').style.display = 'block';
             }, 1500);
+
+            // Verifica se cookies já foram aceitos
+            if (localStorage.getItem("cookiesAceitos") === "true") {
+                document.getElementById("cookie-bar").style.display = "none";
+            }
         });
+
+        function aceitarCookies() {
+            localStorage.setItem("cookiesAceitos", "true");
+            document.getElementById("cookie-bar").style.display = "none";
+        }
 
         function fecharBalao() {
             document.getElementById('balao-senatran').style.display = 'none';

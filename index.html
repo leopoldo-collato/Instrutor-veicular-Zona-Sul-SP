@@ -88,13 +88,42 @@
         .btn-entendi { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; width: 100%; transition: 0.3s; }
         .btn-entendi:hover { background: var(--secondary); }
 
-        /* --- CONFIGURAÇÕES GERAIS --- */
-        #preloader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--primary); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.8s; }
-        .loader-logo { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+        /* --- CONFIGURAÇÕES GERAIS E PRELOADER CORRIGIDO --- */
+        #preloader { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background-color: var(--primary); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 9999; 
+            transition: 3.0s; 
+            padding: 20px; /* Adicionado padding para mobile */
+        }
+        .loader-logo { 
+            color: white; 
+            font-size: 1.8rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin-bottom: 20px; 
+            text-align: center; /* Centralizar texto */
+            max-width: 100%; /* Não estourar largura */
+        }
         .loader-logo span { color: var(--secondary); }
-        .loader-circle { width: 45px; height: 45px; border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 1s linear infinite; }
+        .loader-circle { width: 45px; height: 45px; border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 2s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .hide-preloader { opacity: 0; visibility: hidden; }
+        .hide-preloader { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        /* Media query específica para diminuir o texto do loader em celulares pequenos */
+        @media (max-width: 480px) {
+            .loader-logo {
+                font-size: 1.3rem;
+            }
+        }
 
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -122,11 +151,11 @@
             nav ul.active { left: 0; }
             nav ul li { margin: 15px 0; }
             nav ul li a { font-size: 1.1rem; }
-            
+           
             #cookie-bar { flex-direction: column; text-align: center; gap: 10px; padding: 20px; }
             #cookie-bar button { margin-left: 0; width: 100%; }
             #balao-senatran { right: 20px; left: 20px; bottom: 100px; max-width: none; }
-            
+           
             section { padding: 100px 5% 40px; }
             #inicio h1 { font-size: 2.2rem !important; }
             .section-title { font-size: 1.8rem; }
@@ -150,19 +179,19 @@
         .section-title { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
         .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 5px solid var(--secondary); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;}
-        
+       
         .img-container-full { width: 100%; height: 250px; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 5px; background-color: transparent; border-radius: 10px; }
-        
+       
         /* SOLUÇÃO DEFINITIVA PARA RETIRAR O FUNDO */
-        .img-autoescola-final { 
-            max-width: 100%; 
-            max-height: 100%; 
-            object-fit: contain; 
+        .img-autoescola-final {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             /* Filtros combinados para eliminar o fundo cinza/claro e manter a borda */
-            mix-blend-mode: multiply; 
+            mix-blend-mode: multiply;
             filter: contrast(1.1) brightness(1.1);
-            border: 3px solid var(--secondary); 
-            border-radius: 15px; 
+            border: 3px solid var(--secondary);
+            border-radius: 15px;
             padding: 5px;
         }
 
@@ -187,7 +216,7 @@
     </div>
 
     <div id="preloader" role="status" aria-label="Carregando">
-        <div class="loader-logo">INSTRUTOR <span> ZONA SUL SP </span></div>
+        <div class="loader-logo">INSTRUTOR<span> ZONA SUL SP </span></div>
         <div class="loader-circle"></div>
     </div>
 
@@ -219,9 +248,10 @@
     <main>
         <section id="inicio" style="background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1593950315186-76a92975b60c?w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; text-align: center;">
             <h1 style="font-size: 3.5rem; margin-bottom: 15px;" data-aos="zoom-in">Liberdade no Volante</h1>
-            <p style="font-size: 1.2rem; font-weight: 300;">Aprenda as técnicas essenciais e desenvolva confiança!</p>
+            <p style="font-size: 1.2rem; font-weight: 150;">Aprenda as técnicas essenciais e desenvolva confiança!</p>
+            <br>
             <p style="font-size: 1.2rem; font-weight: 300;">"Aulas de direção CNH do Brasil e para Habilitados com medo de dirigir"</p>
-
+            <br>
             <div class="image-autoescola-final" data-aos="fade-up" data-aos-delay="200">
                     <div class="img-container-full">
                         <img src="imagens/autoescola.jpg" alt="Instrutor Leopoldo" class="img-autoescola-final">
@@ -276,7 +306,7 @@ O grande diferencial do nosso trabalho é o acompanhamento personalizado. Não t
                     <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> atendimento@instrutorzonasulsp.com.br</p>
                     <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i> Whatsapp: (11) 99291-6204</p>
                     <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> Interlagos - São Paulo/SP</p>
-                    
+                   
                     <div style="margin-top: 15px;">
                         <p style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); text-transform: uppercase;">Horário de atendimento</p>
                         <p style="font-weight: 600;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 8px;"></i> De segunda à sábado: das 8:00 às 19:00hs</p>
@@ -320,7 +350,7 @@ O grande diferencial do nosso trabalho é o acompanhamento personalizado. Não t
             setTimeout(() => {
                 document.getElementById("preloader").classList.add("hide-preloader");
             }, 800);
-            
+           
             setTimeout(() => {
                 document.getElementById('balao-senatran').style.display = 'block';
             }, 1500);
