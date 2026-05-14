@@ -1,6 +1,73 @@
-# Instruções para todos os robôs de busca (Google, Bing, etc.)
+# =========================================================
+# ROBOTS.TXT - INSTRUTOR ZONA SUL SP
+# Site: https://www.instrutorzonasulsp.com.br
+# =========================================================
+
 User-agent: *
 Allow: /
 
-# Link para o seu mapa do site (ajuda o Google a encontrar suas seções mais rápido)
-Sitemap: https://www.instrutorzonasulsp.com.br
+# =========================================================
+# BLOQUEIOS DE ÁREAS DESNECESSÁRIAS
+# =========================================================
+
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search/
+Disallow: /trackback/
+Disallow: /*?replytocom
+Disallow: /author/
+Disallow: /tag/
+
+# Permitir arquivos importantes
+Allow: /wp-admin/admin-ajax.php
+
+# =========================================================
+# OTIMIZAÇÃO PARA MECANISMOS DE BUSCA
+# =========================================================
+
+# Palavras-chave relacionadas ao site:
+# cnh do brasil
+# aulas para habilitados
+# instrutor de direção
+# instrutor individual
+# instrutor na zona sul de são paulo
+# instrutor de direção na zona sul de são paulo
+# auto escola
+# auto escola em são paulo
+# aulas de direção
+# aulas de direção para habilitados em são paulo
+# habilitado com medo de dirigir
+# detran sp
+
+# =========================================================
+# SITEMAP
+# =========================================================
+
+Sitemap: https://www.instrutorzonasulsp.com.br/sitemap.xml
+
+# =========================================================
+# BOTS ESPECÍFICOS
+# =========================================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# =========================================================
+# CRAWL DELAY (opcional)
+# =========================================================
+
+Crawl-delay: 10
